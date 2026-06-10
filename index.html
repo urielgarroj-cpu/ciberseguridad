@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Privacidad Digital | Info Legal y Protección en Redes</title>
+    <!-- Font Awesome 6 (gratuito) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter + espacio tipográfico -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fc;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* Gradiente y efectos sutiles */
+        .bg-gradient {
+            background: linear-gradient(135deg, #e9f0f5 0%, #ffffff 100%);
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header hero */
+        .hero {
+            background: linear-gradient(125deg, #0b2b3b 0%, #123e52 100%);
+            color: white;
+            padding: 3rem 0 3.5rem;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 i {
+            color: #5ee0fa;
+            margin-right: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-legal {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Tarjetas y secciones */
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin: 2rem 0 1rem 0;
+            border-left: 6px solid #1f7f8c;
+            padding-left: 1rem;
+            color: #0f2e3a;
+        }
+
+        .section-sub {
+            font-size: 1rem;
+            color: #2c5a6e;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 32px -16px rgba(0, 48, 73, 0.15);
+        }
+
+        .card-icon {
+            font-size: 2.3rem;
+            color: #1f7f8c;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .risk-list, .protect-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .risk-list li, .protect-list li {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-list i.fa-exclamation-triangle {
+            color: #e67e22;
+            width: 22px;
+        }
+
+        .protect-list i.fa-shield-haltered {
+            color: #2c7a4d;
+        }
+
+        .legal-box {
+            background: #eef2f5;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #c44536;
+        }
+
+        .dato-impacto {
+            background: linear-gradient(112deg, #fef5e8 0%, #fff6e8 100%);
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .referencias {
+            background: #ffffffdb;
+            backdrop-filter: blur(2px);
+            border-radius: 1.2rem;
+            padding: 1.6rem;
+            margin: 2rem 0 3rem;
+            border: 1px solid #dce5ec;
+        }
+
+        .referencias a {
+            color: #1a6b79;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #1a6b79;
+            transition: 0.2s;
+        }
+
+        .referencias a:hover {
+            color: #0c3e48;
+            border-bottom: 2px solid #0c3e48;
+        }
+
+        footer {
+            background: #0c2a35;
+            color: #bdd3df;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-top {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            background: #1f7f8c;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 99;
+        }
+
+        .btn-top:hover {
+            background: #0d5c66;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 1.9rem; }
+            .section-title { font-size: 1.6rem; }
+            .container { padding: 0 18px; }
+            .card { padding: 1.2rem; }
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #bdd3df, transparent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container">
+        <div class="badge-legal"><i class="fas fa-gavel"></i> Marco legal México · ARCO · IFT</div>
+        <h1><i class="fas fa-lock"></i> Privacidad Digital</h1>
+        <p>El control real sobre tus datos en internet: desde redes sociales hasta tus derechos legales. Infórmate, protégete y actúa.</p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px;">
+            <span><i class="fas fa-check-circle"></i> Robo de identidad</span>
+            <span><i class="fas fa-check-circle"></i> Sanciones legales</span>
+            <span><i class="fas fa-check-circle"></i> Derechos ARCO</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- SECCIÓN 1: Qué es privacidad digital -->
+    <div class="section-title"><i class="fas fa-user-secret" style="margin-right: 12px;"></i> ¿Qué es la privacidad digital?</div>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-database"></i></div>
+            <h3>Definición clave</h3>
+            <p>Es el derecho de los usuarios a decidir <strong>cómo se recopila, usa y comparte</strong> su información personal en internet. Implica consentimiento, control y transparencia.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+            <h3>Tipos principales</h3>
+            <ul style="list-style-position: inside; margin-top: 8px;">
+                <li><i class="fas fa-file-alt"></i> <strong>Privacidad de la información</strong> (datos personales)</li>
+                <li><i class="fas fa-comments"></i> <strong>Privacidad de comunicaciones</strong> (mensajes, llamadas)</li>
+                <li><i class="fas fa-user"></i> <strong>Privacidad individual</strong> (exposición a contenidos)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Control digital</h3>
+            <p>Decidir qué compartes, quién lo ve y con qué fin. La privacidad no es secreto, es <strong>autonomía informativa</strong> en el mundo online.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: Riesgos en redes sociales -->
+    <div class="section-title"><i class="fas fa-bell"></i> ⚠️ Riesgos en redes sociales</div>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-virus"></i></div>
+            <h3>Malware y enlaces maliciosos</h3>
+            <p>Archivos o enlaces fraudulentos que infectan dispositivos y roban información.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
+            <h3>Ciberbullying & acoso</h3>
+            <p>Hostigamiento digital, insultos y difusión de contenido íntimo sin consentimiento.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-id-card"></i></div>
+            <h3>Robo de identidad</h3>
+            <p>Suplantación con tus fotos, nombre o cuentas bancarias, generando fraudes.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-fish"></i></div>
+            <h3>Phishing</h3>
+            <p>Mensajes falsos que imitan empresas reales para robar contraseñas o datos bancarios.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-brain"></i></div>
+            <h3>Adicción digital</h3>
+            <p>Uso compulsivo vinculado a ansiedad, depresión y pérdida de bienestar.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 3: Cómo protegerte -->
+    <div class="section-title"><i class="fas fa-shield-virus"></i> 🛡️ Cómo protegerte en redes</div>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
+            <h3>Configura tu privacidad</h3>
+            <p>Ajusta quién puede ver tus publicaciones, etiquetarte y enviarte solicitudes. Revisa cada 3 meses.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-key"></i></div>
+            <h3>Contraseñas seguras + 2FA</h3>
+            <p>Combina mayúsculas, números y símbolos. Activa <strong>autenticación en dos pasos</strong> para todas las cuentas.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-eye-slash"></i></div>
+            <h3>Evita compartir datos sensibles</h3>
+            <p>No publiques dirección exacta, teléfono, INE, número de tarjeta o cuentas bancarias.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-check-double"></i></div>
+            <h3>Verifica antes de compartir</h3>
+            <p>Desconfía de cadenas, noticias falsas y retos virales. Fuente oficial o chequeo doble.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 4: Consecuencias legales en México + ARCO -->
+    <div class="section-title"><i class="fas fa-balance-scale"></i> ⚖️ Marco legal mexicano</div>
+    <div class="legal-box">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <i class="fas fa-landmark" style="font-size: 2rem; color:#c44536;"></i>
+            <h3 style="margin:0">Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</h3>
+        </div>
+        <p style="margin-top: 12px;">Regula el uso legítimo, controlado y consentido de la información personal por parte de empresas y particulares. <strong>Derechos ARCO</strong> como pilar fundamental:</p>
+        <ul style="margin: 12px 0 0 24px;">
+            <li><strong>A</strong>cceso: saber qué datos tienen sobre ti.</li>
+            <li><strong>R</strong>ectificación: corregir datos inexactos.</li>
+            <li><strong>C</strong>ancelación: solicitar eliminación de datos.</li>
+            <li><strong>O</strong>posición: rechazar uso para fines específicos.</li>
+        </ul>
+        <p style="margin-top: 15px;"><i class="fas fa-exclamation-triangle"></i> <strong>Sanciones severas:</strong> Multas económicas desde miles hasta millones de pesos, clausura temporal o definitiva de actividades, y responsabilidad penal en casos de violación grave a la privacidad (hasta prisión).</p>
+    </div>
+
+    <!-- DATOS IMPACTANTES -->
+    <div class="section-title"><i class="fas fa-chart-simple"></i> 📊 Datos impactantes (IFT & estudios)</div>
+    <div class="dato-impacto">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <div><i class="fas fa-mobile-alt" style="font-size: 2rem; color:#e67e22;"></i> <span style="font-weight:800;">10+ tipos de datos</span><br>Las plataformas digitales recopilan ubicación, contactos, fotos, datos bancarios, historial de navegación, preferencias y más.</div>
+            <div><i class="fas fa-chart-line" style="font-size: 2rem; color:#1f7f8c;"></i> <span style="font-weight:800;">Marketing dirigido</span><br>La mayoría de redes sociales usan tu información para publicidad personalizada y perfiles comerciales.</div>
+            <div><i class="fab fa-facebook" style="font-size: 2rem; color:#3b5998;"></i> <span style="font-weight:800;">Desconfianza en Facebook</span><br>Estudios muestran que Facebook genera menor confianza en privacidad frente a Instagram y X (Twitter).</div>
+        </div>
+        <hr style="margin: 1rem 0;">
+        <p><i class="fas fa-newspaper"></i> Reporte del IFT 2024: El 72% de usuarios mexicanos no lee términos y condiciones, lo que facilita el uso comercial indiscriminado de sus datos.</p>
+    </div>
+
+    <!-- REFERENCIAS con hipervínculos activos (APA 7) -->
+    <div class="section-title"><i class="fas fa-book-open"></i> 📚 Referencias </div>
+    <div class="referencias">
+        <ul style="list-style: none; margin-bottom: 12px;">
+            <li style="margin-bottom: 12px;">🔹 <strong>Concepto.</strong> (2025). <em>Privacidad digital: características y riesgos</em>. Recuperado de <a href="https://concepto.de/privacidad-digital" target="_blank" rel="noopener noreferrer">https://concepto.de/privacidad-digital</a> <i class="fas fa-external-link-alt"></i></li>
+            <li style="margin-bottom: 12px;">🔹 <strong>Instituto Politécnico Nacional.</strong> (2025). <em>Seguridad en redes sociales</em>. Recuperado de <a href="https://www.ipn.mx" target="_blank" rel="noopener noreferrer">https://www.ipn.mx</a> <i class="fas fa-external-link-alt"></i></li>
+            <li style="margin-bottom: 12px;">🔹 <strong>Cámara de Diputados.</strong> (2025). <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</em>. Recuperado de <a href="https://www.diputados.gob.mx" target="_blank" rel="noopener noreferrer">https://www.diputados.gob.mx</a> <i class="fas fa-external-link-alt"></i></li>
+            <li style="margin-bottom: 12px;">🔹 <strong>Instituto Federal de Telecomunicaciones (IFT).</strong> (2024). <em>Informe de privacidad de usuarios en servicios digitales</em>. Recuperado de <a href="https://www.ift.org.mx" target="_blank" rel="noopener noreferrer">https://www.ift.org.mx</a> <i class="fas fa-external-link-alt"></i></li>
+        </ul>
+        <p style="font-size: 0.85rem; color:#2c5a6e;"><i class="fas fa-info-circle"></i> Todos los enlaces son fuentes oficiales o sitios de referencia académica, actualizados según lineamientos APA.</p>
+    </div>
+
+    <!-- Recursos extra: dato legal + resumen de derechos -->
+    <div style="background: #d9e6f2; border-radius: 1.2rem; padding: 1.2rem 1.8rem; margin: 1rem 0;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+            <div><i class="fas fa-file-signature" style="font-size: 1.7rem;"></i> <strong>Consejo extra:</strong> Presenta una solicitud ARCO ante el INAI si sospechas mal uso de tus datos.</div>
+            <div><i class="fas fa-user-check"></i> Conoce tus derechos: <a href="https://home.inai.org.mx" target="_blank" style="color:#0c4e5e; font-weight: bold;">Portal INAI</a></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <i class="fas fa-shield-haltered"></i> Privacidad Digital MX — Información con enfoque legal, social y preventivo.<br>
+        Contenido basado en fuentes oficiales mexicanas y datos del IFT. <strong>#ProtegeTusDatos</strong><br>
+        <span style="font-size: 0.75rem;">&copy; 2025 - Campaña de concientización sobre privacidad en redes sociales y derechos ARCO.</span>
+    </div>
+</footer>
+
+<!-- botón flotante para ir arriba -->
+<a href="#" class="btn-top" aria-label="Subir arriba">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- pequeño script para smooth scroll del botón y cualquier otro efecto -->
+<script>
+    (function() {
+        // Smooth scroll para el botón de regreso arriba
+        const topBtn = document.querySelector('.btn-top');
+        if(topBtn) {
+            topBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        // agregar target="_blank" a todos los enlaces de referencias por seguridad (ya lo están pero doble check)
+        const refLinks = document.querySelectorAll('.referencias a');
+        refLinks.forEach(link => {
+            if(!link.hasAttribute('target')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    })();
+</script>
+</body>
+</html>
